@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-26T20:20:02 IST" name="Default suite" finished-at="2024-10-26T20:20:32 IST" duration-ms="30150">
+    <groups>
+    </groups>
+    <test started-at="2024-10-26T20:20:02 IST" name="Default test" finished-at="2024-10-26T20:20:32 IST" duration-ms="30150">
+      <class name="tests.Login">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:02 IST" name="setup" finished-at="2024-10-26T20:20:06 IST" duration-ms="3820" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginUsingValidCredentials(java.lang.String,java.lang.String)[pri:1, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:06 IST" name="verifyLoginUsingValidCredentials" data-provider="dataSupplier1" finished-at="2024-10-26T20:20:07 IST" duration-ms="1101" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amotooribatch1@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[abcde]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginUsingValidCredentials -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:07 IST" name="teardown" finished-at="2024-10-26T20:20:07 IST" duration-ms="168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:07 IST" name="setup" finished-at="2024-10-26T20:20:10 IST" duration-ms="3082" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginUsingValidCredentials(java.lang.String,java.lang.String)[pri:1, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:10 IST" name="verifyLoginUsingValidCredentials" data-provider="dataSupplier1" finished-at="2024-10-26T20:20:11 IST" duration-ms="1090" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amotooribatch11@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[fghij]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginUsingValidCredentials -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:11 IST" name="teardown" finished-at="2024-10-26T20:20:12 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:12 IST" name="setup" finished-at="2024-10-26T20:20:15 IST" duration-ms="3054" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginUsingValidCredentials(java.lang.String,java.lang.String)[pri:1, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:15 IST" name="verifyLoginUsingValidCredentials" data-provider="dataSupplier1" finished-at="2024-10-26T20:20:16 IST" duration-ms="1073" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amotooribatch111@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[klmno]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginUsingValidCredentials -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:16 IST" name="teardown" finished-at="2024-10-26T20:20:16 IST" duration-ms="146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:16 IST" name="setup" finished-at="2024-10-26T20:20:19 IST" duration-ms="3197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginUsingInvalidCredentials()[pri:2, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:19 IST" name="verifyLoginUsingInvalidCredentials" finished-at="2024-10-26T20:20:20 IST" duration-ms="856" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginUsingInvalidCredentials -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:20 IST" name="teardown" finished-at="2024-10-26T20:20:20 IST" duration-ms="162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:20 IST" name="setup" finished-at="2024-10-26T20:20:23 IST" duration-ms="3287" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginUsingInvalidEmailAndValidPassword()[pri:3, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:23 IST" name="verifyLoginUsingInvalidEmailAndValidPassword" finished-at="2024-10-26T20:20:24 IST" duration-ms="835" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginUsingInvalidEmailAndValidPassword -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:24 IST" name="teardown" finished-at="2024-10-26T20:20:24 IST" duration-ms="158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:24 IST" name="setup" finished-at="2024-10-26T20:20:27 IST" duration-ms="3107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginUsingValidEmailAndInvalidPassword()[pri:4, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:27 IST" name="verifyLoginUsingValidEmailAndInvalidPassword" finished-at="2024-10-26T20:20:28 IST" duration-ms="812" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginUsingValidEmailAndInvalidPassword -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:28 IST" name="teardown" finished-at="2024-10-26T20:20:28 IST" duration-ms="155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:28 IST" name="setup" finished-at="2024-10-26T20:20:31 IST" duration-ms="3066" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginWithoutCredentials()[pri:5, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:31 IST" name="verifyLoginWithoutCredentials" finished-at="2024-10-26T20:20:32 IST" duration-ms="570" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithoutCredentials -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@76a4ebf2]" started-at="2024-10-26T20:20:32 IST" name="teardown" finished-at="2024-10-26T20:20:32 IST" duration-ms="168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
