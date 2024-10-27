@@ -1,36 +1,29 @@
 package tests;
 
-import java.time.Duration;
-import java.util.Properties;
+import java.util.HashMap;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import base.Base;
 import pages.AccountPage;
 import pages.LandingPage;
 import pages.LoginPage;
+import util.MyXLSReader;
 import util.Utilities;
 
-public class Login {
+public class Login extends Base {
 	
-	Properties prop;
-	
-	WebDriver driver;
+	public WebDriver driver;
 	
 	@BeforeMethod
 	public void setup() {
 		
-		prop = Utilities.loadPropertiesFile();
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		driver.get(prop.getProperty("appURL"));
+		driver = openApplicationURLIntheBrowser(prop.getProperty("browser"));
 		
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.clickOnMyAccountDropMenu();
@@ -44,12 +37,12 @@ public class Login {
 	}
 	
 	@Test(priority=1,dataProvider="dataSupplier1")
-	public void verifyLoginUsingValidCredentials(String email,String password) {
+	public void verifyLoginUsingValidCredentials(HashMap<String,String> hMap) {
 	
 		LoginPage loginPage = new LoginPage(driver);
 		Assert.assertTrue(loginPage.naviagedToLoginPage());
-		loginPage.enterEmailAddress(email);
-		loginPage.enterPassword(password);
+		loginPage.enterEmailAddress(hMap.get("Username"));
+		loginPage.enterPassword(hMap.get("Password"));
 		loginPage.clickOnLoginButton();
 		
 		AccountPage accountPage = new AccountPage(driver);
@@ -60,9 +53,14 @@ public class Login {
 	
 	@DataProvider(name="dataSupplier1")
 	public Object[][] supplyTestDataOne() {
-		Object[][] data = {{"amotooribatch1@gmail.com","abcde"},
-				{"amotooribatch11@gmail.com","fghij"},
-				{"amotooribatch111@gmail.com","klmno"}};
+		MyXLSReader xlsReader = null;
+		Object[][] data = null;
+		try {
+			xlsReader = new MyXLSReader(System.getProperty("user.dir")+"\\src\\test\\resources\\TutorialsNinjaData.xlsx");
+			data = Utilities.getTestData(xlsReader,"LoginTest","TestData");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		return data;
 	}
 	

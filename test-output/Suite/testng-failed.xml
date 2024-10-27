@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="listeners.MyListeners"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="tests.Register">
+      <class name="tests.Search">
         <methods>
+          <include name="verifySearchWithExistingProduct"/>
           <include name="teardown"/>
+          <include name="verifySearchWithNonExistingProduct"/>
           <include name="setup"/>
-          <include name="verifyRegisterationBySayingNoToNewsletter"/>
+          <include name="verifySearchWithoutEnteringAnyProduct"/>
         </methods>
-      </class> <!-- tests.Register -->
+      </class> <!-- tests.Search -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

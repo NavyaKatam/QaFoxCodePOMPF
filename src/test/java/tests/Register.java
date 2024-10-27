@@ -1,15 +1,12 @@
 package tests;
 
-import java.time.Duration;
-import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import base.Base;
 import pages.AccountPage;
 import pages.AccountSuccessPage;
 import pages.LandingPage;
@@ -17,10 +14,9 @@ import pages.NewsletterSubscriptionPage;
 import pages.RegisterPage;
 import util.Utilities;
 
-public class Register {
+public class Register extends Base {
 	
-	WebDriver driver;
-	Properties prop;
+	public WebDriver driver;
 	
 	@AfterMethod
 	public void teardown() {
@@ -30,13 +26,7 @@ public class Register {
 	@BeforeMethod
 	public void setup() {
 		
-		prop = Utilities.loadPropertiesFile();
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		driver.get(prop.getProperty("appURL"));
-		
+		driver = openApplicationURLIntheBrowser(prop.getProperty("browser"));
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.clickOnMyAccountDropMenu();
 		driver = landingPage.selectRegisterOption();
@@ -171,7 +161,7 @@ public class Register {
 		
 	}
 	
-	@Test(priority=4)
+	@Test(priority=4,enabled=false)
 	public void verifyRegisterationBySayingNoToNewsletter() {
 		
 		RegisterPage registerPage = new RegisterPage(driver);

@@ -23,6 +23,12 @@ public class LandingPage {
 	@FindBy(linkText="Login")
 	private WebElement loginOption;
 	
+	@FindBy(name="search")
+	private WebElement searchBoxField;
+	
+	@FindBy(xpath="//button[@class='btn btn-default btn-lg']")
+	private WebElement searchButton;
+	
 	public void clickOnMyAccountDropMenu() {
 		myAccountDropMenu.click();
 	}
@@ -34,6 +40,15 @@ public class LandingPage {
 	
 	public WebDriver selectLoginOption() {
 		loginOption.click();
+		return driver;
+	}
+	
+	public void enterSearhTerm(String searchTermText) {
+		searchBoxField.sendKeys(searchTermText);
+	}
+	
+	public WebDriver clickOnSearchButton() {
+		searchButton.click();
 		return driver;
 	}
 
