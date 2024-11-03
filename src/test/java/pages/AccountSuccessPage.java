@@ -5,13 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import util.ElementUtils;
+import util.Utilities;
+
 public class AccountSuccessPage {
 	
 	WebDriver driver;
+	ElementUtils elementUtils;
 	
 	public AccountSuccessPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
+		elementUtils = new ElementUtils(driver);
 	}
 	
 	@FindBy(linkText="Logout")
@@ -27,26 +32,20 @@ public class AccountSuccessPage {
 	private WebElement continueButton; 
 	
 	public boolean isUserLoggedIn() {
-		
-		return logoutOption.isDisplayed();
+		return elementUtils.dispalyStatusOfElement(logoutOption);
 	}
 	
 	public boolean isAccountSuccessPageDisplayed() {
-		
-		return accountSuccessBreadcrumbOption.isDisplayed();
+		return elementUtils.dispalyStatusOfElement(accountSuccessBreadcrumbOption);
 	}
 	
 	public String getProperContentDisplayed() {
-		
-		
-		return successPageContent.getText();
-		
+		return elementUtils.retrieveTextFromElement(successPageContent,Utilities.EXPLICIT_WAIT_TIME);
 	}
 	
-	public WebDriver clickOnContinueButton() {
-		
-		continueButton.click();
-		return driver;
+	public AccountPage clickOnContinueButton() {
+		elementUtils.clickOnElement(continueButton,Utilities.EXPLICIT_WAIT_TIME);
+		return new AccountPage(driver);
 	}
 
 }

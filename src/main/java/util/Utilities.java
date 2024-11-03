@@ -14,6 +14,9 @@ import org.openqa.selenium.io.FileHandler;
 
 public class Utilities {
 	
+	public static final int EXPLICIT_WAIT_TIME = 30;
+	public static final int IMPLICIT_WAIT_TIME = 3;
+	
 	public static String generateNewEmail() {
 		
 		Date date = new Date();
@@ -111,7 +114,8 @@ public class Utilities {
 		String screenshotFilePath = null;
 		
 		try {
-			screenshotFilePath = System.getProperty("user.dir")+"\\target\\screenshots\\"+testName+".png";
+			Properties prop = Utilities.loadPropertiesFile();
+			screenshotFilePath = System.getProperty("user.dir")+prop.getProperty("screenshotsPath")+testName+".png";
 			FileHandler.copy(screenshotFile,new File(screenshotFilePath));
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -5,13 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import util.ElementUtils;
+import util.Utilities;
+
 public class AccountPage {
 	
 	WebDriver driver;
+	ElementUtils elementUtils;
 	
 	public AccountPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
+		elementUtils = new ElementUtils(driver);
 	}
 	
 	@FindBy(linkText="Edit your account information")
@@ -24,18 +29,15 @@ public class AccountPage {
 	private WebElement logoutOption;
 	
 	public boolean navigatedToAccountPage() {
-		
-		return editYourAccountInformationOption.isDisplayed();
+		return elementUtils.dispalyStatusOfElement(editYourAccountInformationOption);
 	}
 	
-	public WebDriver clickOnSubscribeUnscribeToNewsletterOption(){
-		
-		subscribeUnsubscribeNewsletterOption.click();
-		return driver;
+	public NewsletterSubscriptionPage clickOnSubscribeUnscribeToNewsletterOption(){
+		elementUtils.clickOnElement(subscribeUnsubscribeNewsletterOption,Utilities.EXPLICIT_WAIT_TIME);
+		return new NewsletterSubscriptionPage(driver);
 	}
 	
 	public boolean isUserLoggedIn() {
-		
-		return logoutOption.isDisplayed();
+		return elementUtils.dispalyStatusOfElement(logoutOption);
 	}
 }

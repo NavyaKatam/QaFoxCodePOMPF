@@ -36,7 +36,7 @@ public class Base {
 		}
 	
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Utilities.IMPLICIT_WAIT_TIME));
 		driver.get(prop.getProperty("appURL"));
 		
 		return driver;

@@ -3,6 +3,7 @@ package listeners;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -66,7 +67,8 @@ public class MyListeners implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		report.flush();
-		String extentReportPath = System.getProperty("user.dir")+"\\target\\reports\\TNExtentReport.html";
+		Properties prop = Utilities.loadPropertiesFile();
+		String extentReportPath = System.getProperty("user.dir")+prop.getProperty("extentReportPath");
 		File extentReportFile = new File(extentReportPath);
 		try {
 			Desktop.getDesktop().browse(extentReportFile.toURI());
