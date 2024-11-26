@@ -36,7 +36,7 @@ public class SearchTest extends Base {
 		landingPage.enterSearhTerm(prop.getProperty("validProductSearchKey"));
 		searchPage = landingPage.clickOnSearchButton();
 		
-		Assert.assertTrue(!searchPage.isValidProductDisplayed());
+		Assert.assertTrue(searchPage.isValidProductDisplayed());
 		
 	}
 	
@@ -54,12 +54,6 @@ public class SearchTest extends Base {
 	@Test(priority=3)
 	public void verifySearchWithoutEnteringAnyProduct() {
 		
-		int i=5;
-		
-		if(i==5) {
-			throw new SkipException("Test got skipped as the value of i got 5");
-		}
-	
 		searchPage = landingPage.clickOnSearchButton();
 		
 		SearchPage searchPage = new SearchPage(driver);

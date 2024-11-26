@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="tests.Search">
+      <class name="tests.SearchTest">
         <methods>
-          <include name="verifySearchWithExistingProduct"/>
-          <include name="teardown"/>
           <include name="verifySearchWithNonExistingProduct"/>
+          <include name="teardown"/>
           <include name="setup"/>
+          <include name="verifySearchWithExistingProduct"/>
           <include name="verifySearchWithoutEnteringAnyProduct"/>
         </methods>
-      </class> <!-- tests.Search -->
+      </class> <!-- tests.SearchTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
